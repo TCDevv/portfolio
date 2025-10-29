@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: none !important;
+  }
+
+  body {
+    @apply font-sans;
+    margin: 0;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    background-color: #0A0A0A;
+    color: white;
+    transition: background-color 0.2s ease;
+  }
+
+  html.light body {
+    background-color: #F8FAFC;
+    color: #0F172A;
+  }
+
+  /* Light mode scrollbar */
+  html.light ::-webkit-scrollbar-track {
+    background: #E2E8F0;
+  }
+
+  html.light ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #3B82F6 0%, #06B6D4 100%);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom selection color */
+  ::selection {
+    background-color: #0066FF;
+    color: white;
+  }
+
+  ::-moz-selection {
+    background-color: #0066FF;
+    color: white;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0A0A0A;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #0066FF 0%, #00D4FF 100%);
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #0080FF 0%, #00E4FF 100%);
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+
+  .section-padding {
+    @apply px-6 md:px-12 lg:px-24 py-20;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.3s ease-out forwards;
+    opacity: 0;
+  }
+}
+
+@layer components {
+  /* Optimized transitions - smooth hover effects without theme switching lag */
+
+  /* Allow only non-color transitions globally for smooth interactions */
+  * {
+    transition-property: transform, opacity, filter, box-shadow, scale !important;
+    transition-duration: 0.2s !important;
+    transition-timing-function: ease !important;
+  }
+
+  /* Specific elements that need background/color transitions (only for hover, not theme) */
+  button:not(.theme-toggle),
+  a:not(nav a) {
+    transition-property: transform, opacity, filter, box-shadow, background-color, scale !important;
+    transition-duration: 0.2s !important;
+  }
+
+  /* Theme-affected elements: NO transitions on colors/backgrounds for instant theme switching */
+  .bg-dark,
+  .bg-dark-light,
+  .bg-gray-800,
+  .text-white,
+  .text-gray-300,
+  .text-gray-400,
+  .text-gray-500,
+  section,
+  nav,
+  nav a,
+  nav button,
+  p,
+  h1, h2, h3, h4, h5, h6,
+  span {
+    transition-property: transform, opacity, filter, box-shadow, scale !important;
+    transition-duration: 0.2s !important;
+  }
+
+  /* Light mode overrides - Modern, attractive color palette */
+  html.light .bg-dark {
+    background-color: #FFFFFF !important;
+  }
+
+  html.light .bg-dark-light {
+    background-color: #F1F5F9 !important;
+  }
+
+  html.light .text-white {
+    color: #0F172A !important;
+  }
+
+  html.light .text-gray-300 {
+    color: #475569 !important;
+  }
+
+  html.light .text-gray-400 {
+    color: #64748B !important;
+  }
+
+  html.light .text-gray-500 {
+    color: #94A3B8 !important;
+  }
+
+  html.light .border-gray-800 {
+    border-color: #CBD5E1 !important;
+  }
+
+  html.light .bg-gray-800 {
+    background-color: #E2E8F0 !important;
+  }
+
+  /* Light mode gradient backgrounds - Soft, modern gradients */
+  html.light .bg-gradient-to-b {
+    background-image: linear-gradient(to bottom, #FFFFFF 0%, #F8FAFC 50%, #F1F5F9 100%) !important;
+  }
+
+  html.light section#home {
+    background-image: linear-gradient(to bottom, #FFFFFF 0%, #F8FAFC 50%, #F1F5F9 100%) !important;
+  }
+
+  /* Light mode navbar - Clean with subtle shadow */
+  html.light nav {
+    background-color: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.5);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+  }
+
+  html.light nav.bg-transparent {
+    background-color: transparent !important;
+    border-bottom: none;
+    box-shadow: none;
+  }
+
+  html.light nav a,
+  html.light nav button {
+    color: #334155 !important;
+  }
+
+  html.light nav a:hover {
+    color: #3B82F6 !important;
+  }
+
+  html.light nav .text-primary {
+    color: #3B82F6 !important;
+  }
+
+  /* Light mode cards - Better contrast and depth */
+  html.light .bg-dark-light {
+    background-color: #FFFFFF !important;
+    border: 1px solid #E2E8F0 !important;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05) !important;
+  }
+
+  /* Light mode hover effects */
+  html.light .hover\:bg-gray-800:hover {
+    background-color: #F8FAFC !important;
+  }
+}
