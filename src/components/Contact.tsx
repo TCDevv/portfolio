@@ -1,4 +1,4 @@
-import { personalInfo } from '../data/portfolio';
+import { personalInfo } from "../data/portfolio";
 
 const Contact = () => {
   return (
@@ -11,7 +11,8 @@ const Contact = () => {
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-6"></div>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            I'm always open to new opportunities and collaborations. Feel free to reach out!
+            I'm always open to new opportunities and collaborations. Feel free
+            to reach out!
           </p>
         </div>
 
@@ -125,7 +126,9 @@ const Contact = () => {
                 </div>
                 <div className="flex-1">
                   <p className="text-gray-400 text-sm mb-1">Location</p>
-                  <p className="text-white font-medium">{personalInfo.location}</p>
+                  <p className="text-white font-medium">
+                    {personalInfo.location}
+                  </p>
                 </div>
               </div>
             </div>
@@ -136,7 +139,12 @@ const Contact = () => {
                 href={`mailto:${personalInfo.email}`}
                 className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-secondary text-white rounded-lg font-semibold text-lg hover:opacity-90 transition-opacity duration-150"
               >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -153,7 +161,8 @@ const Contact = () => {
         {/* Footer */}
         <div className="mt-20 pt-8 border-t border-gray-800 text-center">
           <p className="text-gray-500">
-            &copy; {new Date().getFullYear()} {personalInfo.name}. Built with React, TypeScript, Tailwind CSS & GSAP
+            &copy; {new Date().getFullYear()} {personalInfo.name}. All rights
+            reserved.
           </p>
         </div>
       </div>
