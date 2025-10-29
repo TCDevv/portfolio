@@ -13,7 +13,7 @@ interface Particle {
 const ParticlesBackground = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const particles = useRef<Particle[]>([]);
-  const animationFrameId = useRef<number>();
+  const animationFrameId = useRef<number | undefined>(undefined);
 
   useEffect(() => {
     const canvas = canvasRef.current;

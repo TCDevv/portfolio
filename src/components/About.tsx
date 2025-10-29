@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { expertise, achievements } from '../data/portfolio';
+import { skills, achievements } from '../data/portfolio';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -57,14 +57,14 @@ const About = () => {
             Area of <span className="text-gradient">Expertise</span>
           </h3>
           <div className="expertise-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {expertise.map((skill, index) => (
+            {skills.map((skill, index) => (
               <div
                 key={index}
                 className="expertise-item bg-dark p-6 rounded-lg border border-gray-800 hover:border-primary transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
               >
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
-                  <p className="text-gray-300 font-medium">{skill}</p>
+                  <p className="text-gray-300 font-medium">{skill.name}</p>
                 </div>
               </div>
             ))}
