@@ -43,12 +43,12 @@ const Navbar = () => {
         scrolled ? 'bg-dark/95 backdrop-blur-md py-4 shadow-lg' : 'bg-transparent py-6'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
+      <div className="flex items-center justify-between px-6 mx-auto max-w-7xl md:px-12">
         <a href="#home" className="text-xl font-bold">
-          <span className="text-gradient">CT</span>
+          <span className="text-gradient">TC</span>
         </a>
 
-        <ul className="hidden md:flex space-x-8">
+        <ul className="hidden space-x-8 md:flex">
           {menuItems.map((item) => (
             <li key={item.href}>
               <a
@@ -68,7 +68,7 @@ const Navbar = () => {
 
           <a
             href={`mailto:${personalInfo.email}`}
-            className="hidden md:block px-6 py-2 border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-150 rounded-md font-medium"
+            className="hidden px-6 py-2 font-medium transition-all duration-150 border-2 rounded-md md:block border-primary text-primary hover:bg-primary hover:text-white"
           >
             Contact Me
           </a>
@@ -76,7 +76,7 @@ const Navbar = () => {
           {/* Mobile menu button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden text-white dark:text-white"
+            className="text-white md:hidden dark:text-white"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? (
@@ -94,7 +94,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-dark/98 backdrop-blur-md border-t border-gray-800">
+        <div className="border-t border-gray-800 md:hidden bg-dark/98 backdrop-blur-md">
           <ul className="px-6 py-4 space-y-4">
             {menuItems.map((item) => (
               <li key={item.href}>
@@ -112,7 +112,7 @@ const Navbar = () => {
             <li>
               <a
                 href={`mailto:${personalInfo.email}`}
-                className="block w-full px-6 py-3 border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-150 rounded-md font-medium text-center"
+                className="block w-full px-6 py-3 font-medium text-center transition-all duration-150 border-2 rounded-md border-primary text-primary hover:bg-primary hover:text-white"
               >
                 Contact Me
               </a>
